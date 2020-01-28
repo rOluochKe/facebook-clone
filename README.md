@@ -12,3 +12,6 @@ The project required us to design an entity relationship model for [facebook lik
 ## Contributors
 [Phemia Ampaire](https://github.com/ampaire) &&
 [Raymond Oluoch](https://github.com/rOluochKe)
+
+## Licence
+MIT
