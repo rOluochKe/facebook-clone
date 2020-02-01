@@ -1,2 +1,4 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+
+  <%= @post.content%>
+  <p><%= link_to  "Delete post", @post, method: :delete %>
+  <%= link_to "Edit_post", @post, method: :update%> </p>
