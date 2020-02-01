@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
-  before_action :find_post, except: %i[new create index]
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
-  before_action :require_login
+  before_action :get_post, except: [:new, :create, :index]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -12,14 +11,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build
   end
 
-  def show
-  end
-
-  def edit
-  end
-
   def create
-   @post = current_user.posts.create(content: params[:post][:content])
+    puts "#$$$$$$$$$$$$$$ #{current_user}"
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.valid?
       @post.save
       redirect_to posts_url
@@ -27,7 +22,6 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
-
   def update
     if @post.update(content: params[:post][:content])
 		redirect_to @post
@@ -44,7 +38,7 @@ class PostsController < ApplicationController
 
   private
 
-  def find_post
+  def get_post
     @post = Post.find(params[:id])
   end
 

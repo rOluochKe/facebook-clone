@@ -1,4 +1,4 @@
 class Post < ApplicationRecord
-  belongs_to :user, class_name: "User", foreign_key: "user_id"
-  validates :content, presence: true,  length: {maximum: 50}  
+  belongs_to :user
+  validates :content, presence: true,  length: {maximum: 200}  
 end
