@@ -14,13 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-    @post = current_user.posts.new(post_params)
-    if @post.save
-      flash[:success] = 'success'
-      redirect_to root_path
-=======
-    puts "#$$$$$$$$$$$$$$ #{current_user}"
+    puts "#{$PROCESS_ID}$$$$$$$$$$$$ #{current_user}"
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.valid?
@@ -33,8 +27,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(content: params[:post][:content])
-		redirect_to @post
->>>>>>> 19e38b9cd4832a0e46d2c13b6b77b5a505419706
+      redirect_to @post
     else
       flash[:warning] = 'something went wrong, make sure you have more than 20 characters in the content of the post, and a title'
       redirect_to root_path
