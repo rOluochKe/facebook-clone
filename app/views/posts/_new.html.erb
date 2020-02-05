@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= form_for(@post, url: posts_url, method: 'post') do |f| %>
 
   <div class="field">
@@ -10,3 +11,10 @@
   </div>
   
   <% end %>
+=======
+<h1 class="text-center mb-5">What's on your mind?</h1>
+<%= form_with(model:  @post) do |f| %>
+  <%= f.text_area :content, class: 'form-control', placeholder: 'Whats on your mind?', autofocus: true %>
+  <%= f.submit class: 'btn btn-primary btn-lg custom-btn text-center' %>
+<% end %>
+>>>>>>> 19e38b9cd4832a0e46d2c13b6b77b5a505419706
