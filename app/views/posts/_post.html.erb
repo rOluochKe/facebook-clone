@@ -1,6 +1,6 @@
 <%= render  "posts/new" %>
 <h1>Feed</h1>
 <% @posts.each do |p| %>
- <span class='font-weight-bold'><%= current_user.name %></span> <br>
+ <strong><%= current_user.name %></strong> <br>
   <p><%= p.content %></p>
 <%end%>
