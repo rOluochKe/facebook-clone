@@ -8,3 +8,4 @@ files:
     - 'node_modules/*'
 fixers:
   enable: true
+  
