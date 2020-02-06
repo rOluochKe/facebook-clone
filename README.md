@@ -2,7 +2,6 @@
 
 We are building a facebook like application by putting together some of the core features of the platform – users, profiles, “friending”, posts, news feed, and “liking”. We will also implement sign-in with the real Facebook by using Omniauth and Devise. [facebook](htts://facebook.com)
 
-
 ## Technologies
 
 - HTML 
