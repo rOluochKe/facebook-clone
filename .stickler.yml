@@ -7,5 +7,3 @@ files:
     - 'bower_components/*'
 fixers:
   enable: true
-  
-  
